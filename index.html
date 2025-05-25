@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our 29th Monthsary</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Inline critical mobile styles */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #fceff9, #ffe8f0);
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .story-container {
+      max-width: 600px;
+      width: 100%;
+      background-color: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    .story-slide {
+      display: none;
+      text-align: center;
+    }
+
+    .story-slide.active {
+      display: block;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      margin-bottom: 25px;
+      padding: 0 10px;
+    }
+
+    .button {
+      padding: 1em 2em;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      color: #2c9caf;
+      transition: all 0.4s ease;
+      font-size: 1rem;
+      position: relative;
+      overflow: hidden;
+      outline: 2px solid #2c9caf;
+    }
+
+    .button:hover {
+      color: #ffffff;
+      transform: scale(1.05);
+      outline: 2px solid #70bdca;
+      box-shadow: 4px 5px 17px -4px #268391;
+    }
+
+    .button::before {
+      content: "";
+      position: absolute;
+      left: -50px;
+      top: 0;
+      width: 0;
+      height: 100%;
+      background-color: #2c9caf;
+      transform: skewX(45deg);
+      z-index: -1;
+      transition: width 0.6s ease;
+    }
+
+    .button:hover::before {
+      width: 250%;
+    }
+
+    /* Responsive design for smaller screens */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .button {
+        font-size: 0.9rem;
+        padding: 0.8em 1.5em;
+      }
+    }
+  </style>
+</head>
+<body>
+    <div id="loader">
+        <div class="spinner"></div>
+      </div>      
+  <div class="story-container">
+    <div class="story-slide active">
+      <h1>🌸 Our 29th Monthsary 🌸</h1>
+      <p>Today marks another chapter in our love story. Let’s take a sweet walk down memory lane.</p>
+      <button class="button" onclick="nextSlide()">Next</button>
+    </div>
+    <div class="story-slide">
+      <h1>💫 Chapter 1: How We Met</h1>
+      <p>From the moment I met you, I knew you were special. Fate brought us together, and we clicked like magic. Idk basta rag magic hahahaha</p>
+      <button class="button" onclick="nextSlide()">Next</button>
+    </div>
+    <div class="story-slide">
+      <h1>💕 Chapter 2: Our Memories</h1>
+      <p>Through laughs, tears, and countless memories — every moment with you has been worth cherishing.</p>
+      <button class="button" onclick="nextSlide()">Next</button>
+    </div>
+    <div class="story-slide">
+      <h1>🎁 Chapter 3: Grateful Heart</h1>
+      <p>Thank you for being the reason I smile a little more, love a little deeper, and live a lot happier.</p>
+      <button class="button" onclick="nextSlide()">Next</button>
+    </div>
+    <div class="story-slide">
+      <h1>📝 A Little Note</h1>
+      <p>There’s still so much ahead of us. But for now, let’s relive our moments together — through pictures that hold our story. ayaw og hilak ha...</p>
+      <a href="start-memento.html">
+        <button class="button">Welcome to Memory Lane</button>
+      </a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Memento</title>
+  <link rel="stylesheet" href="memento.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      max-width: 100vw;
+      height: 100vh;
+    }
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="slideshow-container">
+    <!-- 15 images -->
+    <img src="images/image1.jpg" class="slide" />
+    <img src="images/image2.jpg" class="slide" />
+    <img src="images/image3.jpg" class="slide" />
+    <img src="images/image4.jpg" class="slide" />
+    <img src="images/image5.jpg" class="slide" />
+    <img src="images/image6.jpg" class="slide" />
+    <img src="images/image7.jpg" class="slide" />
+    <img src="images/image8.jpg" class="slide" />
+    <img src="images/image9.jpg" class="slide" />
+    <img src="images/image10.jpg" class="slide" />
+    <img src="images/image11.jpg" class="slide" />
+    <img src="images/image12.jpg" class="slide" />
+    <img src="images/image13.jpg" class="slide" />
+    <img src="images/image14.jpg" class="slide" />
+    <img src="images/image15.jpg" class="slide" />
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll(".slide");
+    let current = 0;
+    const slideDuration = 2000; // 7 seconds
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove("active");
+        if (i === index) {
+          slide.classList.add("active");
+        }
+      });
+    }
+
+    function nextSlide() {
+      current++;
+      if (current >= slides.length) {
+        window.location.href = "start-appreciation.html";
+      } else {
+        showSlide(current);
+        setTimeout(nextSlide, slideDuration);
+      }
+    }
+
+    // Start slideshow
+    showSlide(current);
+    setTimeout(nextSlide, slideDuration);
+  </script>
+</body>
+</html>
